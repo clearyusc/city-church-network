@@ -14,19 +14,9 @@ import Img from 'gatsby-image'
  */
 
 
-const CircleImage = ({ children }) => (
+const CircleImage = ({ query, children }) => (
     <StaticQuery
-        query={graphql`
-     query {
-       placeholderImage: file(relativePath: { eq: "ryancleary1.jpg" }) {
-         childImageSharp {
-           fluid(maxWidth: 1000) {
-             ...GatsbyImageSharpFluid
-           }
-         }
-       }
-     }
-   `}
+        query={query}
         render={data =>
             <>
                 <Img className="m-2" style={{ 'border-radius': '50%' }}
