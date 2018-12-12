@@ -1,0 +1,74 @@
+header {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url('../images/city3-crop1.jpg');
+  background-size: cover;
+  height: 7vh;
+}
+
+.image-title {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+.image-title h1 {
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  color: white;
+}
+.image-title h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Extra small devices */
+.image-title h1 {font-size:1rem;}
+.image-title {top:15%}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) { 
+  .image-title h1 {font-size:1.5rem;} /*1rem = 16px*/
+  .image-title {top: 20%}
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  .image-title h1 {font-size:2rem;} /*1rem = 16px*/
+  .image-title {top: 20%}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .image-title h1 {font-size:4rem;} /*1rem = 16px*/
+  .image-title {top: 25%}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  .image-title h1 {font-size:4rem;} /*1rem = 16px*/    
+  .image-title {top: 25%}
+}
+
+
+.navbar-trans {
+  background: transparent; 
+}
+.navbar-trans .nav-link {
+  color: white !important;
+}
+.navbar-trans .navbar-brand {
+  color: white !important;
+}
+.app-card {
+  width: 18rem;
+}
+.card-img-top {
+  max-height: 12rem;
+}
