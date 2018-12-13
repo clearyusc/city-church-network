@@ -3,7 +3,7 @@ const React = require('react');
 
 const Section = function ({ header, backgroundClass, children }) {
     return (
-        <div style={{ 'min-height': '20vh' }} className={'py-5 ' + backgroundClass}>
+        <div style={{ minHeight: '20vh' }} className={'py-5 ' + backgroundClass}>
             <div className="container">
                 <div className="row d-flex justify-content-center">
                     {header ? <h1>

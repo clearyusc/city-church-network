@@ -22,13 +22,13 @@ const ChurchInfo = ({ name, location, geolocation, meetingTime, contact }) => (
                     </div>
                     <div className="col-md d-flex flex-column">
                         <p className="lead">Meeting Info</p>
-                        <div className="bg-light p-2 mb-1" style={{ 'min-height': '15%' }}>
+                        <div className="bg-light p-2 mb-1" style={{ minHeight: '15%' }}>
                             <p><strong>{meetingTime}</strong><br /><span className="muted">{location}</span></p>
                         </div>
                         <p className="lead">Contact</p>
                         <div className="bg-light p-2 d-flex" style={{ 'height': '55%' }}>
                             <div style={{ 'width': '50%', 'height': '50%' }}>
-                                <CircleImage>
+                                <CircleImage image={contact.image}>
                                     <h6 className="text-center mt-1">{contact.name}</h6>
                                 </CircleImage>
                             </div>

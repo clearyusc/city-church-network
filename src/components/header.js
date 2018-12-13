@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const Header = ({ siteTitle, links }) => (
-  <header className="fixed-top" style={{ 'box-shadow': '0 4px 6px rgba(0,0,0,0.1)' }}>
+  <header className="fixed-top" style={{ boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
     <div className="navbar navbar-expand-md navbar-dark navbar-inverse justify-content-between">
       <div className="nav-item">
         <h2 style={{ margin: 0 }}>
