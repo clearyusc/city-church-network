@@ -15,9 +15,9 @@ const ChurchSummary = function ({ church }) {
     <Link to={'/' + removeWhiteSpace(church.name) + '/'} className="list-group-item list-group-item-action flex-column align-items-start">
       <div className="d-flex w-100 justify-content-between">
         <h5 className="mb-1">{church.name}</h5>
-        <small>{church.location}</small>
+        <small>{church.location ? church.location : <span></span>}</small>
       </div>
-      <p className="mb-1">{church.meetingTime}</p>
+      <p className="mb-1">{church.meetingTime ? church.meetingTime : <span></span>}</p>
     </Link>
   );
 }
@@ -94,6 +94,28 @@ return graphql(`
   })
 }*/
 
+function getChurchInfo(slug) {
+  return new Promise((resolve, reject) => {
+    graphql(`
+      query($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+          frontmatter {
+            name
+            location
+            meetingTime
+          }
+        }
+      }
+    `).then(result => {
+        return result.data.markdownRemark.frontmatter.location;
+        resolve()
+      })
+  })
+}
+
+function getNameFromSlug(slug) {
+  return slug.replace(/([A-Z])/g, ' $1').trim()
+}
 
 const ChurchesPage = () => (
   <Layout>
@@ -101,7 +123,6 @@ const ChurchesPage = () => (
     <Section header="Our Churches">
       <p>More churches coming soon...</p>
       <div className="list-group">
-
         <StaticQuery
           query={graphql`
           query {
@@ -119,7 +140,10 @@ const ChurchesPage = () => (
           render={data => (
             // TODO: Figure out how to load not just the slugs but also the info
             data.allMarkdownRemark.edges.map(function (edge, i) {
-              return <ChurchSummary church={{ 'name': edge.node.fields.slug, 'location': 'blah', 'meetingTime': '5:00pm' }} />
+              const location = getChurchInfo(edge.node.fields.slug);
+              console.log('LOCATOION = ' + location);
+              const churchName = getNameFromSlug(edge.node.fields.slug)
+              return <ChurchSummary key={i} church={{ 'name': churchName }} />
             })
           )
           }
