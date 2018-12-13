@@ -28,19 +28,7 @@ const ChurchInfo = ({ name, location, geolocation, meetingTime, contact }) => (
                         <p className="lead">Contact</p>
                         <div className="bg-light p-2 d-flex" style={{ 'height': '55%' }}>
                             <div style={{ 'width': '50%', 'height': '50%' }}>
-                                <CircleImage query={
-                                    graphql`
-                                    query {
-                                    placeholderImage: file(relativePath: { eq: "ryancleary1.jpg" }) {
-                                        childImageSharp {
-                                        fluid(maxWidth: 1000) {
-                                            ...GatsbyImageSharpFluid
-                                        }
-                                        }
-                                    }
-                                    }
-                                `
-                                }>
+                                <CircleImage>
                                     <h6 className="text-center mt-1">{contact.name}</h6>
                                 </CircleImage>
                             </div>
