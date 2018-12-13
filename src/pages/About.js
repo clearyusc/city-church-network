@@ -11,7 +11,7 @@ const AboutPage = () => (
         <Section>
             <h1>
                 Who We Are
-        </h1>
+            </h1>
             <p>
                 NO PLACE LEFT
             is a movement of movements aimed at getting to no place left where Christ is not made known in our generation—no people group, ethnic group, city or segment (Rom. 15:23). We do that through reproducing disciples, churches and leaders among the lost until there is no place left for the gospel to be proclaimed.What we are about...</p>
