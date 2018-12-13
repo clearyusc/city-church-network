@@ -93,14 +93,7 @@ return graphql(`
     })
   })
 }*/
-function getDom(data) {
-  return data.allMarkdownRemark.edges.forEach(({ node }) => {
-    return <ChurchSummary church={{ 'name': node.fields.slug, 'location': 'blah', 'meetingTime': '5:00pm' }} />
-  })
-}
-function logData(data) {
-  console.log(data)
-}
+
 
 const ChurchesPage = () => (
   <Layout>
@@ -124,6 +117,7 @@ const ChurchesPage = () => (
             }
         `}
           render={data => (
+            // TODO: Figure out how to load not just the slugs but also the info
             data.allMarkdownRemark.edges.map(function (edge, i) {
               return <ChurchSummary church={{ 'name': edge.node.fields.slug, 'location': 'blah', 'meetingTime': '5:00pm' }} />
             })
