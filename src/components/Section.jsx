@@ -6,8 +6,8 @@ const Section = function ({ header, backgroundClass, children }) {
         <div style={{ minHeight: '20vh' }} className={'py-5 ' + backgroundClass}>
             <div className="container">
                 <div className="row d-flex justify-content-center">
-                    {header ? <h1>
-                        {header}
+                    {header ? <h1 className={header.classes}>
+                        {header.title}
                     </h1> : <span></span>}
                 </div>
                 <div className="row">

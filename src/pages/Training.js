@@ -45,7 +45,11 @@ const mobilizationList = [
 const TrainingPage = () => (
     <Layout>
         <SEO title="Training" />
-        <Section header="Our Training">
+        <Section header={
+            {
+                "title": "Our Training",
+                "classes": "display-4"
+            }}>
             <br />
             <p class="text-center">We are happy to offer <strong>free training</strong> in any of the following areas:</p>
             <div className="row">

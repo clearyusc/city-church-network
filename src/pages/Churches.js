@@ -120,7 +120,11 @@ function getNameFromSlug(slug) {
 const ChurchesPage = () => (
   <Layout>
     <SEO title="Churches" />
-    <Section header="Our Churches">
+    <Section header={
+      {
+        "title": "Our Churches",
+        "classes": "display-4"
+      }}>
       <p>More churches coming soon...</p>
       <div className="list-group">
         <StaticQuery

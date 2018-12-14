@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} links={["About", "Churches", "Training", "Contact"]} />
+        <Header siteTitle={data.site.siteMetadata.title} links={["About", "Churches", "Training"]} />
         <br />
         <br />
         <div>
